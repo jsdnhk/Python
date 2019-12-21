@@ -1,16 +1,20 @@
 # coding: utf-8
- 
-import os
-import sys
+
+from __future__ import print_function
+
 import math
+import os
 import socket
- 
+import sys
+
+
 def slice(mink, maxk):
     s = 0.0
     for k in range(mink, maxk):
-        s += 1.0/(2*k+1)/(2*k+1)
+        s += 1.0 / (2 * k + 1) / (2 * k + 1)
     return s
- 
+
+
 def pi(n):
     childs = {}
     unit = n / 10
@@ -34,6 +38,6 @@ def pi(n):
         rsock.close()
         os.waitpid(pid, 0)  # 等待子进程结束
     return math.sqrt(sum(sums) * 8)
- 
- 
-print pi(10000000)
+
+
+print(pi(10000000))
